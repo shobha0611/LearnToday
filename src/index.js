@@ -1,17 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+/* istanbul ignore file */
+
+// Import from NPM
+// -------------------------------------
+import React from "react";
+import ReactDOM from "react-dom";
+// import { Provider } from "react-redux";
+
+// Import App Configuration and Setup
+// -------------------------------------
+// import { Store } from "backend/storage/mobile/mobile.store";
+import registerServiceWorker from "./registerServiceWorker";
+import "./index.css";
+
+// Import App
+// -------------------------------------
+import App from "./app";
+
+// WebFont.load(getAppConfig().fonts);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <div>
+        <App />
+    </div>,
+    document.getElementById("root") || document.createElement("div")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+registerServiceWorker();
